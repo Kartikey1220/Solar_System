@@ -1,0 +1,534 @@
+
+#solar-system{
+    height:98vh;
+    
+    justify-content:center;
+    align-items: center;
+    position: absolute;
+    right:49%;
+    top:10%;
+   
+}
+#loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #0a0a0a; /* dark background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.rocket {
+  width: 80px; height: 120px;
+  background: url('cartonish-rocket-removebg-preview.png') no-repeat center;
+  background-size: contain;
+  margin-bottom: 20px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.loading-bar {
+  width: 60%;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: limegreen;
+  transition: width 0.3s ease;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: black;
+}
+canvas {
+  display: block;
+  z-index:1;
+}
+.warning{
+  color:red;
+}
+@keyframes Right{
+    from{
+        opacity:0;
+        transform:translateX(833px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(-2px);
+    }
+    
+}
+@keyframes left{
+    from{
+        opacity:1;
+        transform:translateX(0px);
+    }
+    to{
+        opacity:0;
+        transform:translateX(10px);
+    }
+}
+@keyframes Down{
+  from{
+    opacity:0;
+    transform:translateY(0vh);
+  }
+  to{
+    opacity:1;
+    transform:translateY(-99vh);
+  }
+}
+@keyframes up{
+  from{
+    opacity:1;
+    transform:translateY(-99vh);
+  }
+  to{
+    opacity:0;
+    transform:translateY(0vh);
+  }
+}
+.Up-anim{
+    animation:up 1s ease-out forwards;
+}
+.down-anim{
+  display:block !important;
+  animation: Down 3s ease-out forwards;
+}
+.Right-anim {
+    display:block !important;
+    animation: Right 3s ease-out forwards;
+
+
+}
+.Left-anim {
+    
+    animation: left 1s ease-out forwards;
+
+}
+
+.mercury-card{
+  height:99vh;
+  max-width:500px;
+  font-size:  clamp(0.9rem, 2vw, 1.4rem);
+  width:30%;
+  z-index:10;
+  margin-top:5px;
+
+  background-repeat:no-repeat;
+  background-size:cover;
+  border-radius:20px;
+  color:White;
+  position:absolute;
+  right:0;
+  align-items:center;
+  justify-content: center;
+  display:none;
+  overflow-y:scroll;
+
+}
+#mercury-title{
+  display:flex;
+  margin-top:10px;
+  margin-left:120px;
+}
+.mercury-card::-webkit-scrollbar {
+  width: 8px;
+}
+.Venus-card{
+  height:99vh;
+ max-width:500px;
+  z-index:10;
+  background-repeat:no-repeat;
+  background-size:cover;
+  border-radius:20px;
+  color:White;
+  /* gap:40px; */
+  position:absolute;
+  right:0;
+  align-items:center;
+  justify-content: center;
+  display:none;
+  overflow-y:scroll;
+
+}
+.Venus-card::-webkit-scrollbar {
+  width: 8px;
+}
+#Venus-title{
+  display:flex;
+  margin-top:10px;
+  margin-left:120px;
+}
+#venus-btn:hover{
+  background:url(glowing-planet.jpg) no-repeat center center;
+  background-size:contain;
+  transition:0.8s;
+}
+#mer-arrow , #venus-arrow , #earth-arrow , #mars-arrow , #jupiter-arrow , #saturn-arrow , #uranus-arrow , #neptune-arrow{
+  position:absolute;
+  top:1%;
+  right:3%;
+  transform:rotate(-90deg);
+}
+#mer-arrow , #venus-arrow , #earth-arrow , #mars-arrow:hover, #jupiter-arrow:hover , #saturn-arrow:hover , #uranus-arrow:hover , #neptune-arrow:hover{
+  cursor:pointer;
+  color:#bfbfbf;
+}
+.earth-events{
+  height:99vh;
+  width:400px;
+  z-index:10;
+  margin-top:5px;
+
+  background-repeat:no-repeat;
+  background-size:cover;
+  border-radius:20px;
+  color:White;
+  /* gap:40px; */
+  position:absolute;
+  right:0;
+  align-items:center;
+  justify-content: center;
+  display:none;
+  
+}
+.buttons{ 
+  display:grid;
+  grid-template-columns: repeat(2 ,1fr);
+  flex-direction:column;
+  margin-top:40px;  
+  justify-content:space-evenly;
+ 
+  gap:10px;
+}
+.earth-perspective{
+  height:40px;
+  width:140px;
+  text-align: center;
+  text-decoration: none;
+  color:white;
+  background:transparent;
+  border-radius:2px;
+  font-size:22px;
+  border:0.1px solid white;
+  padding: 8px 16px;
+  border-radius:5px;
+  font-family:Arial, Helvetica, sans-serif;
+  margin-left:20px;
+
+    
+}
+.earth-perspective:hover{
+  background:white;
+  color:black;
+  transition:0.3s;
+  cursor:pointer;
+}
+.earth-card{
+  height:99vh;
+  max-width:500px;
+  z-index:10;
+  background-repeat:no-repeat;
+  background-size:cover;
+  border-radius:20px;
+  color:white;
+  /* gap:40px; */
+  position:absolute;
+  right:0;
+  align-items:center;
+  justify-content: center;
+  display:none;
+  overflow-y:scroll;
+}
+.earth-card::-webkit-scrollbar {
+  width: 8px;
+}
+#earth-title{
+  display:flex;
+  margin-top:10px;
+  margin-left:120px;
+}
+#mars-title{
+  display:flex;
+  margin-top:10px;
+  margin-left:120px;
+}
+
+.mars-card{
+  height:99vh;
+  max-width:500px;
+  z-index:10;
+  background-repeat:no-repeat;
+  background-size:cover;
+  border-radius:20px;
+  color:White;
+  /* gap:40px; */
+  position:absolute;
+  right:0;
+  align-items:center;
+  justify-content: center;
+  display:none;
+  overflow-y:scroll;
+
+  
+}
+.mars-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+.jupiter-card{
+  height:99vh;
+  max-width:500px;
+  z-index:10;
+  margin-top:5px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  border-radius:20px;
+  color:White;
+  /* gap:40px; */
+  position:absolute;
+  right:0;
+  align-items:center;
+  justify-content: center;
+  display:none;
+  overflow-y:scroll;
+}
+.jupiter-card::-webkit-scrollbar {
+  width: 8px;
+}
+#jupiter-title{
+  display:flex;
+  margin-left:150px;
+  padding-top:10px;
+  
+
+}
+.saturn-card{
+  height:99vh;
+  max-width:500px;
+  z-index:10;
+  margin-top:5px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  border-radius:20px;
+  color:White;
+  /* gap:40px; */
+  position:absolute;
+  right:0;
+  align-items:center;
+  justify-content: center;
+  display:none;
+  overflow-y:scroll;
+}
+.saturn-card::-webkit-scrollbar {
+  width: 8px;
+}
+#saturn-title{
+  display:flex;
+  margin-left:150px;
+  padding-top:10px;
+  
+
+}
+#saturn-button:hover{
+  background:url(Snowfall.gif.gif) no-repeat center center;
+  background-size:cover;
+  transition:0.8s;
+
+
+}
+#uranus-btn {
+   height:31px;
+  width:110px;
+  background-color:#29279e;
+  text-align:center;
+  text-decoration:none;
+  color:White;
+  font-size:16px;
+  padding-top:5px;
+  border-radius:8px;
+  margin-top:18px;
+  margin-left:20px;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight:bold;
+  display: inline-block;
+  
+ 
+}
+#uranus-btn:hover{
+  background: url(ice-background-removebg-preview.png) center center / cover no-repeat;
+  color:black;
+  transition:0.8s;
+}
+
+.uranus-card{
+  height:99vh;
+  max-width:500px;
+  z-index:10;
+  background-repeat:no-repeat;
+  background-size:cover;
+  border-radius:20px;
+  color:White;
+  /* gap:40px; */
+  position:absolute;
+  right:0;
+  align-items:center;
+  justify-content: center;
+  display:none;
+  overflow-y:scroll;
+
+  
+}
+.uranus-card::-webkit-scrollbar {
+  width: 8px;
+}
+#uranus-title{
+  display:flex;
+  margin-left:150px;
+  padding-top:10px;
+  
+
+}
+.neptune-card{
+  height:99vh;
+  width:40%;
+  max-width:500px;
+  z-index:10;
+  background-repeat:no-repeat;
+  background-size:cover;
+  border-radius:20px;
+  color:White;
+  /* gap:40px; */
+  position:absolute;
+  right:0;
+  align-items:center;
+  justify-content: center;
+  display:none;
+  overflow-y:scroll;
+}
+.neptune-card::-webkit-scrollbar {
+  width: 8px;
+}
+#neptune-title{
+  display:flex;
+  margin-left:150px;
+  padding-top:10px;
+  
+
+}
+
+.E-button{
+  height:31px;
+  width:110px;
+  background-color:#29279e;
+  text-align:center;
+  text-decoration:none;
+  color:White;
+  font-size:16px;
+  padding-top:5px;
+  border-radius:8px;
+  margin-top:18px;
+  margin-left:20px;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight:bold;
+}
+.info{
+  font-family:sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.4rem);
+  line-height: 30px;
+  text-align:center;
+  margin-top:20px;
+}
+header{
+  font-size:40px;
+  text-align:center;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight:bold;
+}
+
+@media(max-width:600px){
+  .Right-anim{
+
+
+  transform: rotate(90deg) translateX(-2px);
+    transform-origin: center center;
+  }
+  @keyframes Right{
+    from{
+        opacity:0;
+        transform:rotate(-90deg) translateX(833px);
+    }
+    to{
+        opacity:1;
+        transform:rotate(-90deg) translateX(-2px);
+    }
+    
+} 
+.mercury-card{
+  width:90vw;
+  height:40vh;
+  overflow-y:scroll;
+  
+ 
+}
+.info{
+  margin-top:0px;
+}
+#card{
+   width:90vw;
+  height:40vh;
+  overflow-y:scroll;
+}
+#mercury-title{
+  margin-left:20px;
+}
+#Venus-title{
+  margin-left:60px;
+  margin-top:40px;
+  
+}
+#mer-arrow , #venus-arrow , #earth-arrow , #mars-arrow , #jupiter-arrow , #saturn-arrow , #uranus-arrow , #neptune-arrow{
+  display:none;
+}
+#earth-title{
+  margin-left:0px;
+  
+  
+  text-align: center;
+}
+#mars-title{
+  margin-left:100px;
+}
+
+#jupiter-title{
+  margin-left:20px;
+}
+#saturn-title{
+  margin-left:30px;
+}
+#uranus-title{
+  margin-left:20px;
+}
+#neptune-title{
+  margin-left:20px;
+}
+.fa-solid-fa-arrow-down{
+  display:none;
+}
+
+}

@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #0a0a0a; /* dark background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-rocket {
+  width: 80px; height: 120px;
+  background: url('cartonish-rocket-removebg-preview.png') no-repeat center;
+  background-size: contain;
+  margin-bottom: 20px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.loading-bar {
+  width: 60%;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: limegreen;
+  transition: width 0.3s ease;
+}
+body {
+  background-color: black; /* solid orange page background */
+  color: white;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+@keyframes Right {
+  from {
+    opacity: 0;
+    transform: translateX(833px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes left {
+  from {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+
+.Right-anim {
+  display: block !important;
+  animation: Right 2s ease-out forwards;
+}
+
+.Left-anim {
+  animation: left 1s ease-out forwards;
+}
+
+/* Glass card only */
+.venus-info {
+  height: 65vh;
+  width: 800px;
+  z-index: 10;
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  bottom:0;
+  display: flex;              /* center content */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+
+
+ /* Fake glass look with gradient */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.15)
+  );
+
+  /* Optional blur if background allows */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+}
+
+hr{
+  width:80%;
+  margin-top:5px;
+}
+H1{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 40px;
+}
+
+.info {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 29px;
+  text-align: center;
+}
+.Warning{
+  color:red;
+}
+

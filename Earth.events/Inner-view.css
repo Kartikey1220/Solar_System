@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black; /* solid black page background */
+  color: white;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.warning{
+  color:red;
+}
+#loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #0a0a0a; /* dark background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-rocket {
+  width: 80px; height: 120px;
+  background: url('cartonish-rocket-removebg-preview.png') no-repeat center;
+  background-size: contain;
+  margin-bottom: 20px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.loading-bar {
+  width: 60%;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: limegreen;
+  transition: width 0.3s ease;
+}
+.earth-card {
+  height: 99vh;
+  max-width:500px;
+  width:50%;
+  z-index: 10;
+  margin-top: 5px;
+  position: absolute;
+  bottom:0;
+  left:-500px;
+  transition:transform 0.6s ease 0.8s;
+  
+  display: flex;              /* center content */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+
+
+ /* Fake glass look with gradient */
+  
+}
+.earth-info{
+    text-align:center;
+    margin-bottom:20vh;
+}
+/* Typography */
+H1{
+  text-align: center;
+  padding-bottom:10px;
+  font-size: 40px;
+}
+hr{
+  width:80%;
+ margin-left:50px;
+  margin-bottom:20px;
+
+}
+.info {
+  font-size:  clamp(0.9rem, 2vw, 1.2rem);
+  margin-bottom:20px;
+  text-align: center;
+  line-height: 30px;
+}
+.earth-perspective{
+    text-decoration: none;
+    color:white;
+    background:transparent;
+    border-radius:2px;
+    
+    font-size:22px;
+    border:0.1px solid white;
+    padding: 8px 16px;
+    border-radius:5px;
+    
+}
+.earth-perspective:hover{
+    background:white;
+    color:black;
+    transition:0.3s;
+    cursor:pointer;
+}
+.Events-title {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+header{
+  text-align:center
+}
+.rocket{
+  height:50px;
+  width:50px;
+  position:absolute;
+  right:-10%;
+  transform:rotate(45deg);
+  top:14%;
+  transition: transform 0.8s ease;
+   /* rotate AFTER container finishes */
+
+
+  background-image:url(cartonish-rocket-removebg-preview.png);
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+.rocket:hover{
+  cursor: pointer;
+}
+.earth-card.active {
+  transform: translateX(500px); /* slide right */
+}
+
+.rocket.flipped {
+  transform: rotate(-125deg); /* flip rocket */
+}
+@media(max-width:600px){
+  .rocket{
+    right:-70%;
+  }
+  .earth-card{
+    left:-75%
+  }
+  .earth-info{
+     width: 93vw;              
+    height: 90vh;
+   
+   
+   
+  }
+  .earth-card.active {
+  transform: translateX(380px);
+}
+
+}

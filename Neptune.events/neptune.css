@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black; /* solid black page background */
+  color: white;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.warning{
+  color:red;
+}
+#loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #0a0a0a; /* dark background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-rocket {
+  width: 80px; height: 120px;
+  background: url('cartonish-rocket-removebg-preview.png') no-repeat center;
+  background-size: contain;
+  margin-bottom: 20px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.loading-bar {
+  width: 60%;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: limegreen;
+  transition: width 0.3s ease;
+}
+.play {
+  width:clamp(100px , 20vw , 250px);
+  height:clamp(35px, 10vh , 70px);
+  position:absolute;
+  background-color:transparent;
+  border: 0.1px solid white;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  font-family: sans-serif;
+  border-radius: 15px;
+  position:absolute;
+  top:80%;
+  left:45%;
+  overflow: hidden;
+  z-index: 0; 
+  padding:8px 16px;
+}
+.play:hover{
+  cursor:pointer;
+}
+
+.Neptune-card {
+  height: 99vh;
+  width: 500px;
+  z-index: 10;
+  margin-top: 5px;
+  position: absolute;
+  right: -500px;
+  transition:transform 0.6s ease 0.8s;
+  display: flex;              /* center content */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+
+
+ /* Fake glass look with gradient */
+  
+}
+
+H1{
+  text-align: center;
+  padding-bottom:10px;
+  font-size: 40px;
+  line-height:45px;
+}
+hr{
+  width:80%;
+  margin-left:10%;
+  margin-bottom:20px;
+
+}
+.Neptune-info {
+ 
+  font-size: 18px;
+  margin-bottom:30vh;
+  text-align: center;
+  line-height: 30px;
+}
+.info{
+  margin-bottom:30px
+}
+.neptune-perspective{
+    text-decoration: none;
+    color:white;
+    background:transparent;
+    border-radius:2px;
+    
+    font-size:22px;
+    border:0.1px solid white;
+    padding: 8px 16px;
+    border-radius:5px;
+    
+}
+.neptune-perspective:hover{
+    background:url(astro-shower.gif) no-repeat center center;
+    background-size:cover;
+   
+    transition:0.3s;
+    cursor:pointer;
+}
+.instruction{
+  color:white;
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  position:absolute;
+  bottom:2.5%;
+  left:2.5%;
+  font-weight:bold;
+  text-decoration:underline;
+}
+#mer-arrow{
+  position:absolute;
+  height:10px;
+  width:10px;
+  bottom:3%;
+  left:102%;
+  transform:rotate(-90deg);
+}
+.rocket{
+  height:50px;
+  width:50px;
+  position:absolute;
+  left:-10%;
+  transform:rotate(-135deg);
+  top:20%;
+  transition: transform 0.8s ease;
+   /* rotate AFTER container finishes */
+
+
+  background-image:url(cartonish-rocket-removebg-preview.png);
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+.rocket:hover{
+  cursor: pointer;
+}
+.Neptune-card.active {
+  transform: translateX(-500px); /* slide right */
+}
+
+.rocket.flipped {
+  transform: rotate(40deg); /* flip rocket */
+}
+@media(max-width:768px){
+ 
+ .Neptune-card {
+ 
+    width: 90vw;
+    height: 100vh;
+    right: -90%;                  
+    top: -28vh;           
+    margin: 0;
+    padding-top: 15rem;            
+    box-sizing: border-box;
+    overflow: visible;
+    position: fixed;
+    z-index: 10;
+    transform-origin: center center;
+  }
+  .neptune-perspective{
+    font-size:clamp(0.9rem, 2vw, 1.4rem);
+  }
+  .Neptune-info {
+    overflow-y: auto;
+   
+    padding-bottom: 10rem;
+     height: 100%;
+  max-height: none;
+  }
+  .rocket{
+    top:50%;
+  }
+  .Neptune-info H1 {
+    font-size: clamp(2rem, 4vw, 1.8rem); 
+
+    text-align: center;
+  }
+ 
+  .info {
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+    line-height: 2;
+    text-align: center;
+    margin-top: 0;
+  }
+  .Neptune-card.active {
+  transform: translateX(-360px); /* slide right */
+}
+
+
+
+}

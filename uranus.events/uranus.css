@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black; /* solid black page background */
+  color: white;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #0a0a0a; /* dark background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-rocket {
+  width: 80px; height: 120px;
+  background: url('cartonish-rocket-removebg-preview.png') no-repeat center;
+  background-size: contain;
+  margin-bottom: 20px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.loading-bar {
+  width: 60%;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: limegreen;
+  transition: width 0.3s ease;
+}
+.Uranus-card {
+  height: 99vh;
+  max-width: 500px;
+  width:40%;
+  z-index: 10;
+  margin-top: 5px;
+  position: absolute;
+  right: -500px;
+  transition:transform 0.6s ease 0.8s;  
+  display: flex;              /* center content */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+
+
+ /* Fake glass look with gradient */
+  
+}
+.warning{
+  color:red;
+}
+H1{
+  text-align: center;
+  padding-bottom:10px;
+  font-size: 40px;
+  line-height:45px;
+}
+hr{
+  width:80%;
+  margin-left:10%;
+  margin-bottom:20px;
+
+}
+.Uranus-info {
+  font-size: 18px;
+  margin-bottom:20vh;
+  text-align: center;
+  line-height: 30px;
+}
+.rocket{
+  height:50px;
+  width:50px;
+  position:absolute;
+  left:-10%;
+  transform:rotate(-135deg);
+  top:18%;
+  transition: transform 0.8s ease;
+   /* rotate AFTER container finishes */
+
+
+  background-image:url(cartonish-rocket-removebg-preview.png);
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+.rocket:hover{
+  cursor: pointer;
+}
+.Uranus-card.active {
+  transform: translateX(-500px); /* slide right */
+}
+
+.rocket.flipped {
+  transform: rotate(40deg); /* flip rocket */
+}
+@media(max-width:768px){
+ 
+ .Uranus-card {
+ 
+    width: 90vw;
+    height: 100vh;
+    right: -90%;                  
+    top: -28vh;           
+    margin: 0;
+    padding-top: 15rem;            
+    box-sizing: border-box;
+    overflow: visible;
+    position: fixed;
+    z-index: 10;
+    transform-origin: center center;
+  }
+  .earth-perspective{
+    font-size:clamp(0.9rem, 2vw, 1.4rem);
+  }
+  .Uranus-info {
+    overflow-y: auto;
+   
+    padding-bottom: 10rem;
+     height: 100%;
+  max-height: none;
+  }
+  .rocket{
+    top:50%;
+  }
+  .Uranus-info H1 {
+    font-size: clamp(2rem, 4vw, 1.8rem); 
+
+    text-align: center;
+  }
+ 
+  .info {
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+    line-height: 2;
+    text-align: center;
+    margin-top: 0;
+  }
+  .Uranus-card.active {
+  transform: translateX(-360px); /* slide right */
+}
+
+}

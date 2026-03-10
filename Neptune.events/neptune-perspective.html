@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neptune's Comet Shower Perspective</title>
+    <link rel="stylesheet" href="neptune-perspective.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+     <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+    }
+  }
+</script>
+</head>
+<body>
+   <div id="loading-screen">
+    <div class="loading-rocket"></div>
+    <div class="loading-bar">
+      <div class="progress"></div>
+    </div>
+  </div>
+      <div class="play">Play</div>
+      <div class="instruction">Move the camera to the right to view the comet shower<i class="fa-solid fa-arrow-down" id="mer-arrow" style="color: #ffffff;"></i></div>
+    <script type="module" src="neptune-perspective.js"></script>
+</body>
+</html>

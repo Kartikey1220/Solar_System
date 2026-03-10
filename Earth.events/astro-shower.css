@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black; /* solid black page background */
+  color: white;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.warning{
+  color:red;
+}
+#loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #0a0a0a; /* dark background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-rocket {
+  width: 80px; height: 120px;
+  background: url('cartonish-rocket-removebg-preview.png') no-repeat center;
+  background-size: contain;
+  margin-bottom: 20px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.loading-bar {
+  width: 60%;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: limegreen;
+  transition: width 0.3s ease;
+}
+
+.play {
+ width:clamp(100px , 20vw , 250px);
+  height:clamp(35px, 10vh , 70px);
+  position:absolute;
+  background-color:transparent;
+  border: 0.1px solid white;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  font-family: sans-serif;
+  border-radius: 15px;
+  position:absolute;
+  top:80%;
+  left:45%;
+  overflow: hidden;
+  z-index: 0; 
+  padding:8px 16px;
+}
+
+.flyby-card {
+  height: 99vh;
+  max-width: 500px;
+  width: 30%;
+  z-index: 10;
+  margin-top: 20px;
+  position: absolute;
+  transition: transform 0.6s ease 0.8s;
+  right: -500px;
+  
+
+  
+  display: flex;              /* center content */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+
+
+ /* Fake glass look with gradient */
+ 
+}
+.flyby-info{
+    text-align: center;
+    margin-bottom: 30vh;
+}
+.info {
+ font-size:  clamp(0.9rem, 2vw, 1.2rem);
+  margin-bottom:20px;
+  text-align: center;
+  line-height: 30px;
+}
+
+h1{
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 40px;
+}
+hr{
+  width:80%;
+ margin-left:50px;
+  margin-bottom:20px;
+
+}
+.earth-perspective{
+    text-decoration: none;
+    color: white;
+    background: transparent;
+
+    border-radius: 5px;
+     font-size:clamp(0.9rem, 2vw, 1.4rem);
+    border: 0.1px solid white;
+    padding:8px 16px;
+    transition: all 0.3s ease; /* keep transition here */
+}
+
+.earth-perspective:hover{
+   background-color:white;
+   color:black;
+    background-size: cover;
+    /* smooth enlargement */
+    opacity: 0.8;
+    cursor: pointer;
+}
+.rocket{
+  height:50px;
+  width:50px;
+  position:absolute;
+  left:-10%;
+  transform:rotate(-135deg);
+  top:8.5%;
+  transition: transform 0.8s ease;
+   /* rotate AFTER container finishes */
+
+
+  background-image:url(cartonish-rocket-removebg-preview.png);
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+.rocket:hover{
+  cursor: pointer;
+}
+.flyby-card.active {
+  transform: translateX(-500px); /* slide right */
+}
+
+.rocket.flipped {
+  transform: rotate(40deg); /* flip rocket */
+}
+@media(max-width:768px){
+ 
+.flyby-card {
+  transform: rotate(-90deg);
+  width: 90vw;
+  height: 100vh;
+  right: 5%;                  /* same horizontal offset */
+  top: -28vh;                 /* adjust if cropping occurs */
+  margin: 0;
+  padding-top: 15rem;         /* consistent padding */
+  box-sizing: border-box;
+  overflow: visible;          /* allow children to show */
+  position: fixed;
+  z-index: 10;
+  transform-origin: center center;
+}
+
+.flyby-info {
+  overflow-y: auto;           /* enable scrolling */
+  height: 100%;               /* fill parent */
+  max-height: none;           /* no artificial cutoff */
+  padding-bottom: 0;
+}
+
+.flyby-info h1 {
+  font-size: clamp(2rem, 4vw, 1.8rem);
+  text-align: center;
+}
+
+.info {
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  line-height: 2;
+  text-align: center;
+  margin-top: 0;
+}
+
+.rocket {
+  display: none;
+}
+.play {
+  right:0;
+  height:10%;
+  width:30%;
+  font-size:clamp(1rem, 2vw, 1.4rem);
+  transform:rotate(-90deg)
+}
+
+
+}

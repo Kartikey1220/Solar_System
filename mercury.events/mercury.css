@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #0a0a0a; /* dark background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-rocket {
+  width: 80px; height: 120px;
+  background: url('cartonish-rocket-removebg-preview.png') no-repeat center;
+  background-size: contain;
+  margin-bottom: 20px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.loading-bar {
+  width: 60%;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: limegreen;
+  transition: width 0.3s ease;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: black;
+}
+canvas {
+  display: block;
+  z-index:1;
+}
+.warning{
+  color:red;
+}
+/* Animations */
+@keyframes Right {
+  from {
+    opacity: 0;
+    transform: translateX(833px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes left {
+  from {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+.earth-view{
+   
+    text-decoration: none;
+    color: white;
+    background: transparent;
+
+    border-radius: 5px;
+    font-size: 22px;
+    border: 0.1px solid white;
+    padding:8px 16px;
+    transition: all 0.3s ease; 
+}
+.rocket{
+  height:50px;
+  width:50px;
+  position:absolute;
+  left:-10%;
+  transform:rotate(-135deg);
+  top:25%;
+  transition: transform 0.8s ease;
+   /* rotate AFTER container finishes */
+
+
+  background-image:url(cartonish-rocket-removebg-preview.png);
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+.rocket:hover{
+  cursor: pointer;
+}
+.mercury-card.active {
+  transform: translateX(-500px); /* slide right */
+}
+
+.rocket.flipped {
+  transform: rotate(40deg); /* flip rocket */
+}
+
+
+.earth-view:hover{
+    background:white;
+    color:black;
+    transition:0.3s;
+    cursor:pointer;
+}
+.Right-anim {
+  display: block !important;
+  animation: Right 2s ease-out forwards;
+}
+
+.Left-anim {
+  animation: left 1s ease-out forwards;
+}
+
+/* Glass card only */
+.mercury-card {
+  height: 99vh;
+  max-width: 500px;
+  width:30%;
+  z-index: 10;
+  margin-top: 5px;
+  position: absolute;
+  right:-500px;
+ 
+  transition:transform 0.6s ease 0.8s;
+  color:white;
+  font-family:sans-serif;
+  display: flex;              /* center content */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+ 
+  
+}
+
+/* Typography */
+H1{
+  text-align: center;
+  padding-bottom:10px;
+  font-size: 40px;
+}
+hr{
+  width:80%;
+  margin-left:10%;
+  margin-bottom:20px;
+
+}
+.mercury-info{
+  text-align:center;
+  margin-bottom:40vh;
+    
+}
+.info {
+ font-size:  clamp(0.9rem, 2vw, 1.4rem);
+  margin-bottom:20px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.Events-title {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .mercury-card {
+    transform: rotate(-90deg);
+    width: 90vw;
+    height: 100vh;
+    right: 4%;       
+    top:-28vh;             /* Adjust horizontal position */
+             /* Shift up due to rotation */
+    margin: 0;
+    padding-top: 15rem;            /* Minimal padding */
+    box-sizing: border-box;
+    overflow: hidden;
+    position: fixed;
+    z-index: 10;
+    transform-origin: center center;
+  }
+  .mercury-info {
+    overflow-y: auto;
+    max-height: calc(100vh - 2rem);
+    padding: 0rem;
+  }
+  .rocket{
+    display:none;
+  }
+  .earth-view{
+    font-size:clamp(0.9rem, 2vw, 1.4rem);
+  }
+}

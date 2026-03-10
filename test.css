@@ -1,0 +1,278 @@
+.vertical-reveal{
+    height: 20px;
+    width:50px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.vertical-reveal .text {
+    position: relative;
+    z-index: 2;
+    color: black;
+    animation: revealText 1s ease forwards;
+}
+
+.vertical-reveal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 1;
+    animation: wipeDown 1s ease forwards;
+}
+
+@keyframes wipeDown {
+  to {
+    left: 100%;
+  }
+}
+.astro{
+    height:300px;
+    width:300px;
+    background-image:url(astronaut.png);
+    background-size:cover;
+    animation: orbit 3s linear infinite;
+}
+@keyframes ToRight{
+    from{
+        transform:translateX(0px);
+    }
+    to{
+        transform:translateX(100px);
+    }
+}
+@keyframes blur{
+    0%{
+        filter: blur(10px);
+    }
+    
+    
+    100%{
+        filter:blur(0px);
+    }
+}
+
+.jupiter{
+    height:300px;
+    width:300px;
+    background-image:url(jupiter-cartoonish-removebg-preview.png);
+    background-size:cover;
+    animation: RiseUp 1s ease-out forwards;
+}
+
+
+@keyframes RiseUp{
+    0%{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+.typewriter-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid black;
+  animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 30ch } /* Match character count */
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+.boxes{
+    height:100px;
+    width:100px;
+     background:linear-gradient(to top , #000000 , #bf8b16);
+    background-repeat:no-repeat;
+    background-size:Cover;
+    
+}
+.animation{
+    animation:downwards 1s ease-out ;
+}
+@keyframes downwards{
+   0%{
+    transform:translateX(0px)
+   }
+   20%{
+    transform:translateX(40px)
+   }
+   40%{
+    transform:translateX(80px)
+   }
+   60%{
+    transform:translateX(40px)
+   }
+   80%{
+    transform:translateX(20px)
+   }
+   100%{
+    transform:translateX(0px)
+   }
+
+}
+ /* .planets {
+  position: absolute;
+  border-radius: 50%;
+  animation: orbit linear infinite;
+    margin-left:200px;
+  align-items: center;
+  justify-content:center;
+}
+
+.mercury{
+  width: 100px;
+  height: 100px;
+  animation-duration: 5s;
+  background-image:url(Mercury.webp);
+  background-size:cover;
+  animation: orbit 3s linear infinite;
+}
+
+.earth{
+  width: 14px;
+  height: 14px;
+  animation-duration: 10s;
+}
+
+.neptune {
+  width: 100px;
+  height: 100px;
+  animation-duration: 25s;
+  background-image:url(Neptune-removebg-preview.png);
+  background-size:cover;
+  animation: orbit 3s linear infinite;
+  
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+} */
+.center-object { 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background: yellow;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbiting-object {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: blue;
+  border-radius: 50%;
+}
+.mars-card{
+  height:1083px;
+  width:500px;
+  background:linear-gradient(to top, #000000 , #3533cd);
+  background-repeat:no-repeat;
+  background-size:cover;
+  border-radius:20px;
+  color:White;
+  gap:40px;
+  position:absolute;
+  right:0;
+  align-items:center;
+  justify-content: center;
+
+  
+}
+#mars-title{
+  display:flex;
+  margin-left:150px;
+  padding-top:50px;
+  
+
+}
+.arrow{
+  position:absolute;
+  top:1%;
+  right:3%;
+  transform:rotate(-90deg);
+}
+.E-button{
+  height:31px;
+  width:110px;
+  background-color:#29279e;
+  text-align:center;
+  text-decoration:none;
+  color:White;
+  font-size:16px;
+  padding-top:5px;
+  border-radius:8px;
+  margin-top:18px;
+  margin-left:20px;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight:bold;
+}
+.info{
+  font-family:sans-serif;
+  font-size:19px;
+  line-height: 30px;
+  text-align:center;
+  margin-top:20px;
+}
+header{
+  font-size:40px;
+  text-align:center;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight:bold;
+}
+
+#loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #0a0a0a; /* dark background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.rocket {
+  width: 80px; height: 120px;
+  background: url('cartonish-rocket-removebg-preview.png') no-repeat center;
+  background-size: contain;
+  margin-bottom: 20px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.loading-bar {
+  width: 40%;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: limegreen;
+  transition: width 0.3s ease;
+}

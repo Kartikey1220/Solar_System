@@ -1,0 +1,1264 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+    display: none;
+}
+
+.grey-color{
+   
+    background: linear-gradient(to right,  #000000, #737373);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.orange-color{
+    background:linear-gradient(to right, #582515, #dd7900);
+    background-repeat:no-repeat;
+    background-size:Cover;
+}
+.golden-color{
+    background:linear-gradient(to top , #000000 , #bf8b16);
+    background-repeat:no-repeat;
+    background-size:Cover;
+}
+.blue-color{
+    background:linear-gradient(to right , #000000 , #3533cd);
+    background-repeat:no-repeat;
+    background-size:Cover;
+}
+.Darkgray-color{
+    background-color:#545454 !important;
+    
+}
+.Question1-animation{
+    animation:Ques-anim 1s ease-out forwards;
+    animation-duration:3s;
+}
+
+.Question1-animationB{
+    animation: BQues-anim 1s ease-out forwards;
+     animation-duration:1s;
+
+}
+.Question2-animation{
+    animation:Ques-anim 1s ease-out forwards;
+    animation-duration:4s;
+   
+}
+
+.Question2-animationB{
+    animation: BQues-anim 1s ease-out forwards;
+    animation-duration:1s;
+  
+
+}
+.Question3-animation{
+    animation:Ques-anim 1s ease-out forwards;
+    animation-duration:3s;
+    
+}
+
+.Question3-animationB{
+    animation: BQues-anim 1s ease-out forwards;
+    animation-duration:2s;
+   
+
+}
+.Question4-animation{
+    animation:Ques-anim 1s ease-out forwards;
+    animation-duration:2s;
+    
+}
+
+.Question4-animationB{
+    animation: BQues-anim 1s ease-out forwards; 
+    animation-duration:3s;
+   
+
+}
+.Question5-animation{
+    animation:Ques-anim 1s ease-out forwards;
+    animation-duration:1s;
+    
+}
+
+.Question5-animationB{
+    animation: BQues-anim 1s ease-out forwards;
+    animation-duration:4s;
+
+
+}
+.ToRight{
+    animation:toRight 1s ease-out forwards;
+}
+.FromRight{
+    animation:fromRight 1s ease-out forwards;
+}
+#Blue{
+    color:#0cc0df
+}
+#green{
+    color:#7ed957;
+}
+#red{
+    color:#ff5757;
+}
+@keyframes faqTitle-animation{
+    from{
+        transform:translateX(0px);
+    }
+    to{
+        transform:translateX(-300px)
+    }
+
+}
+@keyframes faqTitle-Banimation{
+    from{
+        transform:translateX(-300px);
+    }
+    to{
+        transform:translateX(0px)
+    }
+
+}
+@keyframes Briseup{
+    from{
+        transform:translateY(0px)
+    }
+    to{
+        transform:translateY(-100px);
+    };
+};
+
+@keyframes Ans-anim{
+    from{
+        opacity:1;
+        transform:translateX(0px)
+    }
+    to{
+        opacity:0;
+        transform:translateX(1000px)
+    }
+
+}
+@keyframes Ans-Banim{
+    from{
+        opacity:0;
+        transform:translateX(1000px)
+    }
+    to{
+        opacity:1;
+        transform:translateX(-50px)
+    }
+
+}
+
+@keyframes Ques-anim{
+    from{
+        transform:translateY(0px)
+    }
+    to{
+        /* move up visually by 100px without affecting layout */
+        transform: translateY(800px);
+    }
+}
+@keyframes  BQues-anim{
+    from{
+        transform: translateY(800px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
+@keyframes toRight{
+    from{
+        transform:translateX(0px);
+    }
+    to{
+        transform:translateX(300px);
+    }
+}
+@keyframes fromRight{
+    from{
+        transform:translateX(300px);
+    }
+    to{
+        transform:translateX(0px);
+    }
+}
+@keyframes Right{
+    from{
+        opacity:0;
+        transform:translateX(-350px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(50px);
+    }
+    
+}
+@keyframes left{
+    from{
+        opacity:1;
+        transform:translateX(50px);
+    }
+    to{
+        opacity:0;
+        transform:translateX(-350px);
+    }
+}
+@keyframes width{
+    from{
+        
+        width:1000px;
+    }
+    to{
+     
+        width:600px;
+    }
+}
+@keyframes Bwidth{
+    from{
+       
+        width:600px;
+        
+    }
+    to{
+        
+        width:1000px;
+        
+    }
+}
+html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.hero-sec{
+    height:700px;
+    width:100%;
+    background-color:grey;
+    display:Flex;
+    flex-direction:column;
+
+}
+.hero-content{
+    /* ensure the hero content is a flex container and centered */
+    display:flex;
+    width: 100%;
+   
+    align-items: center;     /* center children vertically inside the hero area */
+    flex-direction: column;
+    /* allow smooth transform-based movement and keep final position */
+    transition: transform 0.8s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+.background-sec{
+    height:100%;
+    width:100%;
+    position:relative;
+    background-image: url("Mars wallpaper.jpeg");
+    background-size: cover;
+}
+
+
+
+.title{
+    height:225px;
+
+    
+   font-size: clamp(3rem, 5vw, 5rem);
+
+
+
+    color:white;
+    text-align:center;
+    animation: fadeInRight 0.6s ease-out forwards;
+    font-family:sans-serif;
+    text-shadow: 3px 3px 2px rgba(255, 255, 255, 0.411);
+
+}
+modal-viewer{
+    z-index:1;
+    position:absolute;
+    top:0;
+    margin-left:10px;
+}
+.Instru-heading{
+
+    top:100px;
+
+    font-size:clamp(2rem , 6vw , 4rem);
+    align-items:center;
+    color:white;
+    text-underline-offset: 5px;  /* Adds space between text and underline */
+    font-weight:700;
+    font-family: Roboto Mono, monospace;
+    text-decoration:underline;
+    animation: fadeIn 0.6s ease-out forwards;
+    
+}
+hr{
+    height:100px;
+    width:4px;
+    border:none;
+    background-color:White;
+    margin:12px 0;
+    border-radius:6px;
+    
+
+}
+.rocket-img{
+    height:40px;
+    width:40px;
+   background-image:url(cartonish-rocket-removebg-preview.png);
+   background-size:cover;
+
+}
+.instr-2{
+    display:flex;
+}
+.instructions{
+   
+    top:200px;
+    animation:fadeIn 2s  ease forwards;
+    font-size:20px;
+    color:White;
+    font-weight:0;
+    display:flex;
+    flex-direction:row;
+    
+
+    gap:25px;
+    margin-left:20px;
+    
+
+}
+@media (max-width: 600px) {
+  .instructions {
+    
+    flex-direction: row; /* horizontal layout */
+    justify-content: center;
+    flex-wrap: wrap; /* allows wrapping if too many items */
+  }
+  hr{
+    display:none;
+  }
+}
+/* .instr-1{
+    animation:fadeIn 0.6s ease-out forwards;
+}
+.instr-2{
+    margin-top: 0;
+}
+.instr-3{
+    animation:fadeIn 1.4s ease-out forwards;
+} */
+#instr{
+    font-weight: 100;
+    margin-top:40px;
+    font-family:sans-serif;
+}
+@keyframes fadeInRight{
+    0%{
+        opacity:0;
+        transform:translateX(-100px);
+    }
+    100%{
+        opacity:1;
+        transform:translateX(0px);
+    }
+}
+@keyframes fadeIn{
+    0%{
+        opacity:0;
+        transform:translateX(-10px);
+    }
+    100%{
+        opacity:1;
+        transform:translateX(0px);
+    }
+    /* animation: fadeIn 0.6s ease-out forwards; */
+}
+.faqs-sec{
+    height:900px;
+    width:100%;
+    background-color: #181225;
+    padding-top:40px;
+    overflow:hidden;
+  
+
+    position:relative;
+    
+    
+}
+
+@keyframes scrollGradient {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.faq-title {
+  font-size: 66px;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-left: 75px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+
+  background: linear-gradient(270deg, #ff6fd8, #3813c2, #ff6fd8);
+  background-size: 600% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: scrollGradient 6s linear infinite;
+}
+@media(max-width:600px){
+    .faq-title{
+       margin-left: 0.5em
+    }
+}
+
+.faqTitle-anim{
+    animation:faqTitle-animation 1s ease forwards;
+}
+.faqTitle-Banim{
+    animation:faqTitle-Banimation 1s ease forwards;
+}
+.faq-title.visible::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 1;
+    animation: wipeDown 1s ease forwards;
+}
+@keyframes wipeDown {
+  to {
+    left: 100%;
+  }
+}
+.ques-boxes{
+    margin-top:30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+   
+
+}
+#ques-box{
+    width: clamp(350px, 60vw, 1200px);
+    height:clamp(20px, 80vh , 100px);
+    background-color: transparent; /* let the background image show */
+    border: 2px solid rgba(255,255,255,0.12);
+    gap:30px;
+    margin-top:15px;
+    margin-left:50px;
+    background-image: url(download.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size:25px;
+    color: #ffffff; /* white text color for neon */
+    font-family: sans-serif;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    filter: none;
+    text-shadow:
+        0 0 6px rgba(255,255,255,0.9),
+        0 0 12px rgba(255,255,255,0.75),
+        0 0 24px rgba(255,255,255,0.5),
+        0 0 48px rgba(255,255,255,0.25);
+}
+@media(max-width:600px){
+    .astronaut{
+        display:none;
+    }
+    .car-jupiter{
+        display:none;
+    }
+    #ques-box{
+        margin-left:0.5em
+    }
+}
+
+#ques-box:hover{
+    cursor:pointer;
+}
+.width{
+    animation:width 1s ease-out forwards !important;
+}
+.astronaut{
+    height: 420px;
+    width: 300px;
+    position: absolute;
+    right: 0;
+    bottom:60%;
+
+    background-image: url('astronaut.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+ 
+
+
+}
+.astro-box {
+    position: absolute;
+    background: #f8ef52;
+    color: white;
+    padding:20px;
+    right:12%;
+    top:-20%;
+    width: 250px;
+    height: 200px;
+    margin: 50px;
+    border-radius:5%;
+    overflow:visible;
+
+    font-family: 'Minecraftia', sans-serif;
+    opacity:0;
+    align-items: center;
+    justify-content: center;
+  text-align: center;
+  color:black
+
+
+    }
+
+   
+.box-text{
+    z-index:1;
+}
+@keyframes fadeIn{
+    from{
+        opacity:0
+    }
+    to{
+        opacity:1;
+    }
+}
+.astronaut:hover ~ .astro-box{
+    animation:fadeIn 1s ease forwards;
+}
+.astro-box::after {
+      content: "";
+      z-index:0;
+      position: absolute;
+      bottom: -30px;   /* place below the box */
+      left: 80%;
+      transform: translateX(-50%);
+      overflow:hidden;
+      width: 30px;
+      height:60px;
+      background: #f8ef52;
+      border-radius: 50%;
+     
+
+
+    }
+
+.car-jupiter{
+    width:170px;
+    height:460px;
+    position:absolute;
+    top:40%;
+    right:0;
+    bottom:0;
+    background-image:url(car-jupiter.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+   
+   
+}
+    
+@keyframes Ques2-RiseUp{
+    from{
+ 
+        transform:translateY(-100px);
+    }
+    to{
+     
+        transform:translateY(0px);
+    }
+}
+ @keyframes RiseUp{
+    0%{
+ 
+        transform:translateY(50px);
+    }
+    100%{
+     
+        transform:translateY(0px);
+    }
+}
+@keyframes blur{
+    0%{
+        filter: blur(10px);
+    }
+    
+    
+    100%{
+        filter:blur(0px);
+    }
+}
+
+/* Trigger RiseUp when visible */
+.car-jupiter.visible{
+    animation: RiseUp 1s ease-out forwards;
+}
+.astronaut.visible{
+    animation:blur 1s ease-out forwards;
+}
+
+.Ans1{
+    display:flex;
+    
+
+}
+.Ans1-anim{
+    animation:Right 1s ease-out forwards;
+    animation-delay: 1s;
+}
+.BAns1-anim{
+    animation:left 1s ease-out forwards;
+}
+.ques-anim{
+    animation:width 1s ease-out forwards;
+}
+.Bques-anim{
+    animation:Bwidth 1s ease-out forwards;
+}
+.copernicus {
+  width: clamp(400px, 60vw, 800px);
+aspect-ratio: 16/9;
+  height: auto;
+  background-image:url(copernicus-removebg-preview.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+
+  
+ /* forwards not needed here */
+  display: none; /* make sure it's visible */
+}
+
+@keyframes grow {
+  from { transform: scale(1); }
+  to   { transform: scale(1.2); }
+}
+
+@media (max-width:600px){
+    .copernicus{
+        margin-right:80px;
+    }
+}
+
+.Right-anim {
+    display:block !important;
+    animation: Right 3s ease-out forwards;
+
+
+}
+
+.Left-anim {
+    
+    animation: left 1s ease-out forwards;
+
+}
+.non-visible{
+   
+    animation:Ans-anim 1s ease-out forwards;
+
+}
+.visiblie{
+    display:block !important;
+    animation:Ans-Banim 3s ease-out forwards;
+    
+}
+.Ans1-p{
+    height:520px;
+    width:1031px;
+    max-width:100%;
+    padding:1rem;
+
+    color:white;
+     font-size: clamp(0.9rem, 2vw, 1.4rem);
+  line-height: 1.6;
+
+
+    position:absolute;
+    right:1px;
+    gap:5px;
+     word-wrap: break-word;
+  overflow-wrap: anywhere;
+
+    font-family:sans-serif;
+    margin-top:70px;    
+    display:none;
+}
+@media(max-width:600px){
+    @keyframes Ans-Banim{
+         from{
+        opacity:0;
+        transform:translateX(1000px)
+    }
+    to{
+        opacity:1;
+        transform:translateX(-5px)
+    }
+
+
+    }
+    .Ans1-p{
+        overflow:hidden;
+        bottom:0;
+        
+    }
+}
+.earth-system{
+    aspect-ratio:16/9;
+     width: clamp(200px, 60vw, 600px);
+     height:auto;
+    background-image:url(Earth\ system.png);
+    background-size:cover;
+    position:absolute;
+    right:0;
+    bottom:85%;
+
+    display:none;
+}
+@media(max-width:600px){
+    .earth-system{
+       right:-5%;
+        bottom:70%;
+       
+}
+}
+.Ans2{
+    display:flex;
+
+
+}
+.sun-image{
+    aspect-ratio:16/9;
+    width:408px;
+    height:429px;
+    display:none;
+    position:absolute;
+    bottom:1%;
+    transition: transform 0.3s ease-out;
+    
+}
+@media(max-width:600px){
+    .sun-image{
+        right:15%;
+        bottom:15%;
+    }
+    .sun-image model-viewer {
+        height: 200px !important;
+
+    }
+}
+.Laptop{
+    animation:Ques2-RiseUp 1s ease forwards;
+    
+}
+.Anmol{
+    animation:Briseup 1s ease forwards ;
+}
+@keyframes Ques3-Up {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-100px); }
+}
+
+@keyframes Ques3-Down {
+  from { transform: translateY(-100px); }
+  to   { transform: translateY(0px); } 
+}
+
+@keyframes CompressWidth {
+  from { width: 1025px; }
+  to   { width: 600px; }
+}
+
+@keyframes ExpandWidth {
+  from { width: 600px; }
+  to   { width: 1025px; }
+}
+
+.WidthAndLaptop3 {
+  animation: Ques3-Up 1s ease forwards, CompressWidth 1s ease forwards;
+}
+
+.BwidthAndAnmol3 {
+  animation: Ques3-Down 1s ease forwards, ExpandWidth 1s ease forwards;
+}
+/* .WidthAndLaptop3{
+    animation:Ques3-Briseup 1s ease forwards , width 1s ease forwards
+}
+.BwidthAndAnmol3{
+    animation:Ques3-Riseup 1s ease forwards,  Bwidth 1s ease forwards;
+  
+} */
+ @keyframes Ques4-Up {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-400px); } /* goes up */
+}
+
+@keyframes Ques4-Down {
+  from { transform: translateY(-400px); }
+  to   { transform: translateY(0px); } /* comes back down */
+}
+
+/* @keyframes CompressWidth4 {
+  from { width: 100%; }
+  to   { width: 70%; }
+}
+
+@keyframes ExpandWidth4 {
+  from { width: 70%; }
+  to   { width: 100%; }
+} */
+
+.WidthAndLaptop4 {
+  animation: Ques4-Up 2s ease forwards
+}
+
+.BwidthAndAnmol4 {
+  animation: Ques4-Down 2s ease forwards
+}
+/* .WidthAndLaptop4{
+    animation:Briseup 1s ease forwards 
+}
+.BwidthAndAnmol4{
+    animation:Ques2-RiseUp 1s ease forwards
+} */
+.ans2-p{
+   
+    max-width:100%;
+    width:958px;
+    height:503px;
+    padding:1rem;
+    font-family: sans-serif;
+    color:white;
+   
+    display:none;
+     font-size: clamp(0.9rem, 2vw, 1.4rem);
+    line-height: 1.6;
+   position:absolute;
+    right:1px;
+    gap:5px;
+     word-wrap: break-word;
+  overflow-wrap: anywhere;
+
+
+    
+}
+@media(max-width:600px){
+    .ans2-p{
+        top:60%;
+    }
+}
+header{
+    text-align:center;
+}
+.Ans3{
+    display:flex;
+
+
+
+}
+.car-saturn{
+    height:314px;
+    width:461px;
+    position:absolute;
+    top:30%;
+    display:none;
+}
+
+.ans3-p{
+    position:absolute;
+    right:20px;
+    width:958px;
+    height:503px;
+    max-width:100%;
+    font-family: sans-serif;
+    color:white;
+    line-height:40px;
+    bottom:10%;
+    display:none;
+    font-size: clamp(0.9rem, 2vw, 1.4rem);
+    line-height: 1.6;
+   position:absolute;
+    right:1px;
+    gap:5px;
+    word-wrap: break-word;
+  overflow-wrap: anywhere;
+  
+    
+}
+@media(max-width:600px){
+   
+    .ans3-p{
+        left:5%;
+        top:54%;
+    }
+    .car-saturn{
+        right:5%;
+    }
+    .car-saturn model-viewer{
+        height:200px !important;
+    }
+    
+    @keyframes CompressWidth{
+        from{
+            width:350px;
+        }
+        to{
+            width:350px;
+        }
+    }
+    @keyframes ExpandWidth{
+         from{
+            width:350px;
+        }
+        to{
+            width:350px;
+        }
+    }
+}
+.orbit {
+  position: relative;
+  width: 300px;   /* Horizontal axis (major) */
+  height: 150px;  /* Vertical axis (minor) */
+  border: 1px dashed #888;
+  border-radius: 50%; /* Makes it elliptical */
+  animation: rotateOrbit linear infinite;
+}
+.Ans4{
+    position:Absolute;
+    top:30%;
+    left:30%;
+}
+.planets{
+   position: relative;
+  width: 100%;
+  height: 400px; 
+  overflow: visible;
+  display:flex;
+  display:none;
+ 
+    
+
+}
+@media(max-width:600px){
+    .planets{
+        visibility:hidden;
+    }
+    .ans4-p{
+        left:2%;
+
+
+    }
+}
+.planet {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  
+
+}
+
+.mars{
+    height:50px;
+    width:50px;
+    background-image:url(Mars-removebg-preview.png);
+    background-size:cover;
+   
+
+    
+}
+.earth{
+    height:50px;
+    width:50px;
+    background-image:url(earth.png);
+    background-size:cover;
+
+    border-radius:50%;
+    /* margin-left:50px; */
+  
+
+  
+}
+
+.venus{
+    height:50px;
+    width:50px;
+    background-image:url(Venus-removebg-preview.png);
+    background-size:cover;
+   
+ 
+
+   
+}
+
+
+.mercury {
+  height: 50px;
+  width: 50px;
+  background-image: url(Mercury.webp);
+  background-size: cover;
+
+
+  position: absolute;
+  
+}
+
+
+.sun{
+    height:50px;
+    width:50px;
+    background-image:url(real-sun-removebg-preview.png);
+    background-size:cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.jupiter{
+    height:50px;
+    width:50px;
+    background-image:url(jupiter-removebg-preview.png);
+    background-size:cover;
+   
+
+  
+}
+
+.saturn{
+    height:50px;
+    width:80px;
+    background-image:url(saturn-removebg-preview.png);
+    background-size:cover;
+  
+
+
+}
+.uranus{
+    height:50px;
+    width:80px;
+    background-image:url(uranus-removebg-preview.png);
+    background-size:cover;
+}
+.neptune{
+    height:50px;
+    width:50px;
+    background-image:url(Neptune-removebg-preview.png);
+    background-size:cover;
+}
+
+.ans4-p{
+    position:absolute;
+    right:20px;
+    width:608px;
+    height:503px;
+        max-width:100%;
+    font-family: sans-serif;
+    color:white;
+    
+    top:25%;
+    display:none;
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    line-height: 1.6;
+   position:absolute;
+    right:1px;
+    gap:5px;
+    word-wrap: break-word;
+  overflow-wrap: anywhere;
+    
+
+    
+}
+
+.ques-5{
+    margin-bottom:50px;
+}
+.Ans5{
+    display:flex;
+}
+
+.hermite{
+    width:clamp(237px , 40vw , 434px);
+   
+    background-image:url(moon-north-pole-coldest-place.png);
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    aspect-ratio:16/9;
+    display:none;
+    position:absolute;
+    top:40%;
+
+}
+ @keyframes Ques5-Up {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-400px); } /* goes up */
+}
+
+@keyframes Ques5-Down {
+  from { transform: translateY(-400px); }
+  to   { transform: translateY(0px); } /* comes back down */
+}
+@keyframes CompressWidth5 {
+  from { width: 1025px; }
+  to   { width: 600px; }
+}
+
+@keyframes ExpandWidth5 {
+  from { width: 600px; }
+  to   { width: 1025px; }
+}
+
+@media(max-width:600px){
+    .box-text{
+        display:none;
+    }
+    .hermite{
+        top:30%;
+    }
+
+    @keyframes CompressWidth5 {
+        from{
+            width:350px;
+        }
+        to{
+            width:350px;
+        }
+    }
+    @keyframes ExpandWidth5{
+         from{
+            width:350px;
+        }
+        to{
+            width:350px;
+        }
+    }
+}
+.ans5-p{
+
+    right:20px;
+    width:608px;
+    height:503px;
+    max-width:100%;
+    font-family: sans-serif;
+    color:white;
+   
+    top:15%;
+    display:none;
+  
+    font-size: clamp(0.9rem, 2vw, 1.4rem);
+    line-height: 1.6;
+   position:absolute;
+    
+    gap:5px;
+    word-wrap: break-word;
+  overflow-wrap: anywhere;
+    
+}
+@media(max-width:600px){
+    .ans5-p{
+        top:50%;
+        left:3%;
+    }
+}
+.WidthAndLaptop5 {
+  animation: Ques5-Up 1s ease forwards, CompressWidth5 1s ease forwards;
+}
+
+.BwidthAndAnmol5 {
+  animation: Ques5-Down 1s ease forwards, ExpandWidth5 1s ease forwards;
+}
+@keyframes Start-Rise{
+    from{
+        filter:opacity(1)
+    }
+    to{
+        filter:opacity(0);
+    }
+}
+@keyframes Start-BRise{
+    from{
+        filter:opacity(0);
+    }
+    to{
+        filter:opacity(1);
+    }
+}
+.start-rise{
+    animation:Start-Rise 1s ease-out forwards;
+    animation-delay:0.5s
+}
+.start-brise{
+    animation:Start-BRise 1s ease-out forwards;
+   
+}
+.Start-button {
+    width:100%;
+  max-width: 250px;
+  max-height: 70px;
+  height:auto;
+  background-color: transparent;
+  border: 0.1px solid white;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.8em 1.2em;
+  font-size: 1.5rem; 
+  font-family: sans-serif;
+  border-radius: 15px;
+  position: relative; /* important for ::after positioning */
+  bottom:20%;
+  left: 45%;
+  overflow: hidden;
+  z-index: 0; /* establish stacking context */
+}
+
+.Start-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('Cartoonish-solar-system.jpg') center/cover no-repeat;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1; /* keep it behind text but inside button */
+}
+
+.Start-button:hover::after {
+  opacity: 1;
+}
+@media(max-width:600px){
+    .Start-button{
+   width: 40%;          /* scales with screen width */
+    padding: 1.2em 0.8em; /* taller, but still narrow */
+    font-size: 1rem;     /* adjusts with root font size */
+    margin: 0 auto;      /* centers button */
+    display: block;
+    left:1%;
+
+    }
+}
