@@ -258,7 +258,7 @@ rocket.addEventListener('click', () => {
   });
 
   // Load Saturn model
-  addPlanetModel("Saturn", "SaturnRings(Draco).glb", 20, 15);
+  addPlanetModel("Saturn", "Saturn_rings.glb", 20, 15);
 }
 
 function animate() {
