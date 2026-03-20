@@ -466,8 +466,10 @@ header{
   display:none;
   font-family:sans-serif;
   position:absolute;
-  top:90%;
-  left:20%;
+  top:120%;
+  left:115%;
+  transform:rotate(-90deg);
+  white-space:nowrap;
 }
 @media(max-width:600px){
   .zoom{
